@@ -45,6 +45,9 @@ defaults:
     values:
       layout: "project"
 
+include:
+  - assets/photos
+
 exclude:
   - README.md
   - Gemfile
