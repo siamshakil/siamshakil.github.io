@@ -13,14 +13,24 @@ title: Photos
 <section class="section">
   <div class="container">
 
-    {% assign photos = site.static_files | where_exp: "f", "f.path contains '/assets/photos/'" | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.webp'" %}
+    {% assign folder_files = site.static_files | where_exp: "f", "f.path contains '/assets/photos/'" %}
+    {% assign image_exts = ".jpg.jpeg.png.webp.gif.avif" %}
 
-    {% if photos.size > 0 %}
+    {% assign photo_count = 0 %}
+    {% for f in folder_files %}
+      {% assign ext = f.extname | downcase %}
+      {% if image_exts contains ext %}{% assign photo_count = photo_count | plus: 1 %}{% endif %}
+    {% endfor %}
+
+    {% if photo_count > 0 %}
     <div class="photo-grid">
-      {% for photo in photos %}
+      {% for photo in folder_files %}
+      {% assign ext = photo.extname | downcase %}
+      {% if image_exts contains ext %}
       <div class="photo-item">
         <img src="{{ photo.path | relative_url }}" alt="{{ photo.basename }}" loading="lazy" onclick="openLightbox(this.src)">
       </div>
+      {% endif %}
       {% endfor %}
     </div>
 
