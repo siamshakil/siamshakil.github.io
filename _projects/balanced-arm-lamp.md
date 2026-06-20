@@ -12,7 +12,7 @@ neutral-equilibrium comparison between Anglepoise and Tolomeo designs.
 ## Design brief
 
 The goal: a 600mm reach articulated arm that holds any position without locking mechanisms,
-using only spring-balanced moment equilibrium — the same principle that makes a Tolomeo lamp
+using only spring-balanced moment equilibrium - the same principle that makes a Tolomeo lamp
 feel weightless in the hand.
 
 ## Process
@@ -26,4 +26,4 @@ feel weightless in the hand.
 ## Outcome
 
 A working CAD model validated against hand calculations, with FEA confirming structural margin
-at the extended position — the highest-stress configuration for this linkage type.
+at the extended position - the highest-stress configuration for this linkage type.

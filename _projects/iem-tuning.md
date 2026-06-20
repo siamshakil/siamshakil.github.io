@@ -1,5 +1,5 @@
 ---
-title: "IEM Tuning — AFUL Explorer System"
+title: "IEM Tuning - AFUL Explorer System"
 year: 2025
 status: "Personal"
 tags: [Audio, "EQ Tuning", "Signal Chain", IEM]
@@ -17,7 +17,7 @@ over 4.4mm balanced output.
 
 ## What this involved
 
-- USB dropout diagnosis and signal chain troubleshooting — isolating whether the issue was
+- USB dropout diagnosis and signal chain troubleshooting - isolating whether the issue was
   driver-level, cable, or power delivery
 - Parametric EQ optimization targeting soundstage width and sub-bass rumble without
   smearing midrange clarity
@@ -25,5 +25,5 @@ over 4.4mm balanced output.
 
 ## Why it's here
 
-A side-project, but the same methodical approach applied to engineering — isolate variables,
+A side-project, but the same methodical approach applied to engineering - isolate variables,
 measure, adjust, re-measure. Precision is precision, whether it's a spring rate or a frequency response.

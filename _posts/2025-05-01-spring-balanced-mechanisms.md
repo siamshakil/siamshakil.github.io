@@ -9,4 +9,4 @@ mechanical philosophies.
 
 A close reading of moment balance, spring rate, and why the Tolomeo feels like it defies physics.
 
-*(Replace this with your full post when ready — this is placeholder structure.)*
+*(Replace this with your full post when ready - this is placeholder structure.)*

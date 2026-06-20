@@ -1,5 +1,5 @@
 ---
-title: "EV Market Entry — AREAL / BAW"
+title: "EV Market Entry - AREAL / BAW"
 year: 2025
 status: "Business Dev."
 tags: ["EV Strategy", "BD Market", "Technical BD", "Clean Energy"]
@@ -11,7 +11,7 @@ covering the BAW brand EV lineup and clean energy division strategy in the Bangl
 
 ## Why this matters
 
-EV market entry in Bangladesh isn't a marketing problem — it's a technical-commercial alignment
+EV market entry in Bangladesh isn't a marketing problem - it's a technical-commercial alignment
 problem. Vehicle specifications, charging infrastructure, and C&I account positioning all have
 to move together for an entry strategy to work.
 
@@ -24,5 +24,5 @@ to move together for an entry strategy to work.
 
 ## Approach
 
-Combining engineering literacy with business development methodology — reading a spec sheet
+Combining engineering literacy with business development methodology - reading a spec sheet
 and a procurement process with equal fluency.

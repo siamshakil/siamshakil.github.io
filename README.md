@@ -1,4 +1,4 @@
-# Siam Shakil — Portfolio
+# Siam Shakil - Portfolio
 
 Personal portfolio website built with [Jekyll](https://jekyllrb.com/) and hosted on GitHub Pages.
 
@@ -33,13 +33,13 @@ Then open **http://localhost:4000/**.
 ## Adding photos
 
 Drop image files (`.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`, `.avif`) into `assets/photos/`.
-They appear automatically on the [Photos](photos.html) page — no config or file list to maintain.
+They appear automatically on the [Photos](photos.html) page - no config or file list to maintain.
 
 ## Project structure
 
 | Path | Purpose |
 |------|---------|
-| `_config.yml` | Site config — name, role, links, collections |
+| `_config.yml` | Site config - name, role, links, collections |
 | `index.html`, `projects.html`, `writing.html`, `photos.html` | Top-level pages |
 | `_layouts/` | Page templates (default, post, project) |
 | `_includes/` | Reusable fragments (head, nav, footer) |

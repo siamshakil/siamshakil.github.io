@@ -7,17 +7,18 @@ baseurl: ""
 author:
   name: "Siam Shakil"
   role: "Mechanical Engineer"
-  org: "BJIT Ltd."
+  org: "BJIT Ltd · BanglaCAT"
   location: "Dhaka, Bangladesh"
   coords: "23.8103°N 90.4125°E"
   cert: "CSWP"
-  domain_focus: "Clean Energy · EV · System Development"
+  services: "Mechanical System Design · Business Operation"
+  domain_focus: "Energy · EV"
   email: "siam.shakil3@gmail.com"
   linkedin: "https://www.linkedin.com/in/siam-shakil/"
   github: "https://github.com/"
   cv_path: "/assets/cv-siamshakil.pdf"
 
-# Collections — this is what turns folders into structured content
+# Collections - this is what turns folders into structured content
 collections:
   projects:
     output: true

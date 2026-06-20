@@ -9,11 +9,11 @@ layout: default
     <h1 class="hero-name">Siam<br>Shakil</h1>
     <p class="hero-descriptor">
       I design mechanical systems and build the business case for them.
-      <em>Engineering meets revenue</em> — from ideation to the boardroom.
+      <em>Engineering meets revenue</em> - from ideation to the boardroom.
     </p>
     <a href="#contact" class="cta-btn">Open to opportunities →</a>
 
-    <!-- TITLE BLOCK — engineering drawing identity card -->
+    <!-- TITLE BLOCK - engineering drawing identity card -->
     <div class="title-block">
       <div class="tb-col">
         <div class="tb-cell">
@@ -27,7 +27,7 @@ layout: default
       </div>
       <div class="tb-col">
         <div class="tb-cell">
-          <span class="tb-label">Organisation</span>
+          <span class="tb-label">Organisations</span>
           <span class="tb-value">{{ site.author.org }}</span>
         </div>
         <div class="tb-cell">
@@ -37,12 +37,12 @@ layout: default
       </div>
       <div class="tb-col">
         <div class="tb-cell">
-          <span class="tb-label">Certification</span>
-          <span class="tb-value hi">{{ site.author.cert }}</span>
-        </div>
-        <div class="tb-cell">
           <span class="tb-label">Focus</span>
           <span class="tb-value">{{ site.author.domain_focus }}</span>
+        </div>
+        <div class="tb-cell">
+          <span class="tb-label">Services</span>
+          <span class="tb-value hi">{{ site.author.services }}</span>
         </div>
       </div>
     </div>
@@ -54,7 +54,7 @@ layout: default
 <section id="about" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="label">§ 01 — About</span>
+      <span class="label">§ 01 - About</span>
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="about-grid">
@@ -66,14 +66,14 @@ layout: default
         </p>
         <p>
           At {{ site.author.org }} I work on Design R&amp;D and technical business development, applying
-          structured methods — <strong>TRIZ, QFD, Pugh matrix</strong> — to problems that most
+          structured methods - <strong>TRIZ, QFD, Pugh matrix</strong> - to problems that most
           treat as purely intuitive. I hold a {{ site.author.cert }} credential and work daily in
           <strong>SolidWorks and ANSYS</strong>.
         </p>
         <p>
           My current technical interest is <strong>body-in-white design for local vehicle
           manufacturing</strong> in Bangladesh, where imported drivetrains meet local packaging
-          constraints. The EV transition in South Asia is early-stage and underspecified —
+          constraints. The EV transition in South Asia is early-stage and underspecified -
           exactly where engineering thinking compounds fastest.
         </p>
         <p style="margin-top:1.5rem;">
@@ -102,7 +102,7 @@ layout: default
 <section id="skills" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="label">§ 02 — Capability Matrix</span>
+      <span class="label">§ 02 - Capability Matrix</span>
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="skills-grid">
@@ -138,7 +138,7 @@ layout: default
 <section id="projects" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="label">§ 03 — Selected Work</span>
+      <span class="label">§ 03 - Selected Work</span>
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="projects-list">
@@ -172,7 +172,7 @@ layout: default
 <section id="blog" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="label">§ 04 — Writing</span>
+      <span class="label">§ 04 - Writing</span>
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="blog-grid">
@@ -197,7 +197,7 @@ layout: default
 <section id="contact" class="section">
   <div class="container">
     <div class="section-header">
-      <span class="label">§ 05 — Contact</span>
+      <span class="label">§ 05 - Contact</span>
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="contact-inner">
@@ -208,22 +208,18 @@ layout: default
           and EV / clean energy commercialisation in South Asia.
           Also happy to talk shop on mechanisms, BIW, or IEM tuning.
         </p>
-        <a href="mailto:{{ site.author.email }}" class="cta-btn">{{ site.author.email }}</a>
+        <a href="mailto:{{ site.author.email }}" class="cta-btn">Email Me →</a>
       </div>
       <div class="contact-links">
         <a href="{{ site.author.linkedin }}" class="contact-link" target="_blank" rel="noopener">
           <span class="contact-link-label">LinkedIn</span>
           <span>{{ site.author.linkedin | remove: "https://" }}</span>
         </a>
-        <a href="{{ site.author.github }}" class="contact-link" target="_blank" rel="noopener">
-          <span class="contact-link-label">GitHub</span>
-          <span>{{ site.author.github | remove: "https://" }}</span>
-        </a>
         <a href="#" class="contact-link">
           <span class="contact-link-label">Location</span>
           <span>{{ site.author.location }}</span>
         </a>
-        <a href="{{ site.author.cv_path | relative_url }}" class="contact-link" style="margin-top:1rem;">
+        <a href="{{ site.author.cv_path | relative_url }}" class="contact-link" style="margin-top:auto;margin-bottom:0.9rem;">
           <span class="contact-link-label">CV</span>
           <span>Download PDF →</span>
         </a>
