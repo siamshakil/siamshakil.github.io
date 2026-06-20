@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="single-header">
+  <div class="single-meta">
+    <span class="breadcrumb"><a href="{{ '/projects/' | relative_url }}">← All Projects</a></span>
+    <h1 class="single-title">{{ page.title }}</h1>
+    <div class="single-subline">
+      <span class="mono muted" style="font-size:var(--sz-xs);">{{ page.year }}</span>
+      {% if page.status %}<span class="project-status" style="margin:0;">{{ page.status }}</span>{% endif %}
+    </div>
+    {% if page.tags %}
+    <div class="project-tags" style="margin-bottom:3rem;">
+      {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+<article class="single-content">
+  {{ content }}
+</article>

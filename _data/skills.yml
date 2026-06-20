@@ -1,0 +1,68 @@
+# Edit ratings here (1-5). This file alone drives the entire Skills section.
+# Add a new domain by adding a new top-level entry. Add a skill by adding to items.
+
+- domain: "CAD · Simulation"
+  items:
+    - name: "SolidWorks"
+      level: 5
+    - name: "ANSYS FEA"
+      level: 4
+    - name: "CATIA V5"
+      level: 3
+    - name: "Motion Analysis"
+      level: 4
+
+- domain: "Design Methods"
+  items:
+    - name: "TRIZ"
+      level: 4
+    - name: "QFD"
+      level: 4
+    - name: "Pugh Matrix"
+      level: 5
+    - name: "DFM / DFA"
+      level: 3
+
+- domain: "Domain Knowledge"
+  items:
+    - name: "BIW / Automotive"
+      level: 4
+    - name: "EV / Clean Energy"
+      level: 4
+    - name: "Supply Chain"
+      level: 3
+    - name: "Occupant Packaging"
+      level: 3
+
+- domain: "Commercial"
+  items:
+    - name: "Technical Sales (C&I)"
+      level: 4
+    - name: "Business Development"
+      level: 4
+    - name: "Account Management"
+      level: 3
+    - name: "R&D Data Ops"
+      level: 3
+
+- domain: "Analysis"
+  items:
+    - name: "FEA (Structural)"
+      level: 4
+    - name: "Mechanism Design"
+      level: 4
+    - name: "Simscape Multibody"
+      level: 2
+    - name: "Thermal Analysis"
+      level: 3
+
+- domain: "Tools & Workflow"
+  items:
+    - name: "GitHub"
+      level: 3
+    - name: "PDM / PLM"
+      level: 3
+    - name: "MS Office Suite"
+      level: 4
+    - name: "EQ / Audio Tools"
+      level: 5

@@ -1,0 +1,51 @@
+title: "Shakil Islam"
+tagline: "Mechanical Engineer & Technical Business Developer"
+description: "Mechanical engineer and technical business developer bridging design R&D and commercial strategy. CSWP certified. Based in Dhaka, Bangladesh."
+url: "https://shakil.github.io"   # change to your actual GitHub Pages URL
+baseurl: ""
+
+author:
+  name: "Shakil Islam"
+  role: "Mech. Engineer · Technical BD"
+  org: "BJIT Ltd."
+  location: "Dhaka, Bangladesh"
+  coords: "23.8103°N 90.4125°E"
+  cert: "CSWP"
+  domain_focus: "EV · BIW · Clean Energy"
+  email: "shakil@example.com"
+  linkedin: "https://linkedin.com/in/shakil"
+  github: "https://github.com/shakil"
+  cv_path: "/assets/cv-shakil.pdf"
+
+# Collections — this is what turns folders into structured content
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  posts:
+    output: true
+    permalink: /writing/:year/:month/:title/
+
+# Build settings
+markdown: kramdown
+permalink: /writing/:year/:month/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,233 @@
+---
+layout: default
+---
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">// Engineer · Business Developer · {{ site.author.location }}</p>
+    <h1 class="hero-name">Shakil<br>Islam</h1>
+    <p class="hero-descriptor">
+      I design mechanical systems and build the commercial case for them.
+      <em>R&amp;D meets revenue</em> — from SolidWorks assembly to the boardroom.
+    </p>
+    <a href="#contact" class="cta-btn">Open to opportunities →</a>
+
+    <!-- TITLE BLOCK — engineering drawing identity card -->
+    <div class="title-block">
+      <div class="tb-col">
+        <div class="tb-cell">
+          <span class="tb-label">Full Name</span>
+          <span class="tb-value hi">{{ site.author.name }}</span>
+        </div>
+        <div class="tb-cell">
+          <span class="tb-label">Role</span>
+          <span class="tb-value">{{ site.author.role }}</span>
+        </div>
+      </div>
+      <div class="tb-col">
+        <div class="tb-cell">
+          <span class="tb-label">Organisation</span>
+          <span class="tb-value">{{ site.author.org }}</span>
+        </div>
+        <div class="tb-cell">
+          <span class="tb-label">Location</span>
+          <span class="tb-value">{{ site.author.location }}</span>
+        </div>
+      </div>
+      <div class="tb-col">
+        <div class="tb-cell">
+          <span class="tb-label">Certification</span>
+          <span class="tb-value hi">{{ site.author.cert }}</span>
+        </div>
+        <div class="tb-cell">
+          <span class="tb-label">Focus</span>
+          <span class="tb-value">{{ site.author.domain_focus }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height:3rem;"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">§ 01 — About</span>
+      <hr class="rule-h" style="flex:1;">
+    </div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>
+          I'm a mechanical engineer who crosses into commercial territory — not because I drifted,
+          but because <strong>the most interesting problems live at the boundary</strong> between
+          how something works and whether it should exist at all.
+        </p>
+        <p>
+          At {{ site.author.org }} I work on Design R&amp;D and technical business development, applying
+          structured methods — <strong>TRIZ, QFD, Pugh matrix</strong> — to problems that most
+          treat as purely intuitive. I hold a {{ site.author.cert }} credential and work daily in
+          <strong>SolidWorks and ANSYS</strong>.
+        </p>
+        <p>
+          My current technical interest is <strong>body-in-white design for local vehicle
+          manufacturing</strong> in Bangladesh, where imported drivetrains meet local packaging
+          constraints. The EV transition in South Asia is early-stage and underspecified —
+          exactly where engineering thinking compounds fastest.
+        </p>
+        <p style="margin-top:1.5rem;">
+          <a href="{{ site.author.cv_path | relative_url }}" class="mono accent" style="font-size:0.8rem;letter-spacing:0.08em;border-bottom:1px solid var(--accent-dim);padding-bottom:1px;">
+            Download CV (PDF) →
+          </a>
+        </p>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:1rem;">Credentials &amp; Certifications</p>
+        <ul class="credentials-list">
+          {% for c in site.data.credentials %}
+          <li class="credential-item">
+            <span class="cred-tag">{{ c.tag }}</span>
+            <span class="cred-name">{{ c.name }}</span>
+            <span class="cred-issuer">{{ c.issuer }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">§ 02 — Capability Matrix</span>
+      <hr class="rule-h" style="flex:1;">
+    </div>
+    <div class="skills-grid">
+      {% for domain in site.data.skills %}
+      <div class="skill-domain">
+        <span class="skill-domain-label">{{ domain.domain }}</span>
+        <ul class="skill-items">
+          {% for skill in domain.items %}
+          <li class="skill-item">
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-dots">
+              {% for i in (1..5) %}
+                {% if i <= skill.level %}
+                  <span class="dot filled"></span>
+                {% else %}
+                  <span class="dot"></span>
+                {% endif %}
+              {% endfor %}
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="label" style="margin-top:1rem;text-align:right;">
+      ◼ filled = proficient &nbsp;·&nbsp; ◻ open = familiar
+    </p>
+  </div>
+</section>
+
+<!-- PROJECTS (latest 4 on homepage) -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">§ 03 — Selected Work</span>
+      <hr class="rule-h" style="flex:1;">
+    </div>
+    <div class="projects-list">
+      {% assign sorted_projects = site.projects | sort: 'year' | reverse %}
+      {% for project in sorted_projects limit: 4 %}
+      <div class="project-item">
+        <span class="project-index">P.{{ forloop.index }}</span>
+        <div class="project-content">
+          <h3 class="project-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+          <p class="project-desc">{{ project.excerpt | strip_html | truncate: 220 }}</p>
+          <div class="project-tags">
+            {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+          </div>
+        </div>
+        <div class="project-meta">
+          <p class="project-year">{{ project.year }}</p>
+          <p class="project-status">{{ project.status }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if site.projects.size > 4 %}
+    <p style="margin-top:2rem;text-align:right;">
+      <a href="{{ '/projects/' | relative_url }}" class="mono accent" style="font-size:0.8rem;letter-spacing:0.08em;">All projects →</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- BLOG (latest 4 on homepage) -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">§ 04 — Writing</span>
+      <hr class="rule-h" style="flex:1;">
+    </div>
+    <div class="blog-grid">
+      {% for post in site.posts limit: 4 %}
+      <article class="post-card">
+        <p class="post-date">{{ post.date | date: "%Y · %b" }}</p>
+        <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        {% if post.tags %}<span class="post-tag">{{ post.tags | join: " · " }}</span>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% if site.posts.size > 4 %}
+    <p style="margin-top:2rem;text-align:right;">
+      <a href="{{ '/writing/' | relative_url }}" class="mono accent" style="font-size:0.8rem;letter-spacing:0.08em;">All posts →</a>
+    </p>
+    {% endif %}
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">§ 05 — Contact</span>
+      <hr class="rule-h" style="flex:1;">
+    </div>
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-heading">Let's work<br>on something<br>real.</h2>
+        <p class="contact-sub">
+          Open to roles in Design R&amp;D, technical business development,
+          and EV / clean energy commercialisation in South Asia.
+          Also happy to talk shop on mechanisms, BIW, or IEM tuning.
+        </p>
+        <a href="mailto:{{ site.author.email }}" class="cta-btn">{{ site.author.email }}</a>
+      </div>
+      <div class="contact-links">
+        <a href="{{ site.author.linkedin }}" class="contact-link" target="_blank" rel="noopener">
+          <span class="contact-link-label">LinkedIn</span>
+          <span>{{ site.author.linkedin | remove: "https://" }}</span>
+        </a>
+        <a href="{{ site.author.github }}" class="contact-link" target="_blank" rel="noopener">
+          <span class="contact-link-label">GitHub</span>
+          <span>{{ site.author.github | remove: "https://" }}</span>
+        </a>
+        <a href="#" class="contact-link">
+          <span class="contact-link-label">Location</span>
+          <span>{{ site.author.location }}</span>
+        </a>
+        <a href="{{ site.author.cv_path | relative_url }}" class="contact-link" style="margin-top:1rem;">
+          <span class="contact-link-label">CV</span>
+          <span>Download PDF →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

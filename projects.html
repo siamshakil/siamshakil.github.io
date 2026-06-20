@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Projects"
+permalink: /projects/
+---
+<div class="list-page-header">
+  <div class="list-page-inner">
+    <span class="breadcrumb"><a href="{{ '/' | relative_url }}">← Home</a></span>
+    <h1 class="list-page-title">All Projects</h1>
+  </div>
+</div>
+<div class="container" style="padding-bottom:5rem;">
+  <div class="projects-list">
+    {% assign sorted_projects = site.projects | sort: 'year' | reverse %}
+    {% for project in sorted_projects %}
+    <div class="project-item">
+      <span class="project-index">P.{{ forloop.index }}</span>
+      <div class="project-content">
+        <h3 class="project-title"><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+        <p class="project-desc">{{ project.excerpt | strip_html | truncate: 220 }}</p>
+        <div class="project-tags">
+          {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </div>
+      </div>
+      <div class="project-meta">
+        <p class="project-year">{{ project.year }}</p>
+        <p class="project-status">{{ project.status }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

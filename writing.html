@@ -1,0 +1,23 @@
+---
+layout: default
+title: "Writing"
+permalink: /writing/
+---
+<div class="list-page-header">
+  <div class="list-page-inner">
+    <span class="breadcrumb"><a href="{{ '/' | relative_url }}">← Home</a></span>
+    <h1 class="list-page-title">All Writing</h1>
+  </div>
+</div>
+<div class="container" style="padding-bottom:5rem;">
+  <div class="blog-grid">
+    {% for post in site.posts %}
+    <article class="post-card">
+      <p class="post-date">{{ post.date | date: "%Y · %b %-d" }}</p>
+      <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+      {% if post.tags %}<span class="post-tag">{{ post.tags | join: " · " }}</span>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</div>
