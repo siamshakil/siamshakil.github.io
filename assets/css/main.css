@@ -599,6 +599,67 @@ footer {
   margin: 1.5rem 0;
 }
 
+/* ── PHOTO GALLERY ────────────────────────────────────────── */
+.photo-grid {
+  columns: 3;
+  column-gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 1px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 120ms linear, transform 200ms ease;
+}
+.photo-item:hover img {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* lightbox overlay */
+.lb-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(8,12,16,0.95);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lb-overlay.open { display: flex; }
+.lb-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--border-hi);
+}
+.lb-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--sz-sm);
+  color: var(--fg-muted);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+.lb-close:hover { color: var(--fg); }
+
+@media (max-width: 768px) {
+  .photo-grid { columns: 2; }
+}
+@media (max-width: 480px) {
+  .photo-grid { columns: 1; }
+}
+
 /* ── INDEX LIST PAGES (all projects / all posts) ──────────── */
 .list-page-header {
   padding-top: 52px;

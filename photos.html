@@ -1,0 +1,51 @@
+---
+layout: default
+title: Photos
+---
+
+<div class="list-page-header">
+  <div class="list-page-inner">
+    <p class="label" style="margin-bottom:0.75rem;">§ — Visual Log</p>
+    <h1 class="list-page-title">Photos</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    {% assign photos = site.static_files | where_exp: "f", "f.path contains '/assets/photos/'" | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.webp'" %}
+
+    {% if photos.size > 0 %}
+    <div class="photo-grid">
+      {% for photo in photos %}
+      <div class="photo-item">
+        <img src="{{ photo.path | relative_url }}" alt="{{ photo.basename }}" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lb-overlay" id="lb" onclick="closeLightbox()">
+      <span class="lb-close">[ ESC / CLOSE ]</span>
+      <img id="lb-img" src="" alt="">
+    </div>
+
+    <script>
+      function openLightbox(src) {
+        document.getElementById('lb-img').src = src;
+        document.getElementById('lb').classList.add('open');
+      }
+      function closeLightbox() {
+        document.getElementById('lb').classList.remove('open');
+        document.getElementById('lb-img').src = '';
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    </script>
+    {% else %}
+    <p class="muted mono" style="font-size:var(--sz-sm);">// No photos yet — drop images into <code>assets/photos/</code></p>
+    {% endif %}
+
+  </div>
+</section>
