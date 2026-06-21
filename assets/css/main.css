@@ -651,27 +651,61 @@ footer {
 
 /* ── PHOTO GALLERY ────────────────────────────────────────── */
 .photo-grid {
-  columns: 3;
-  column-gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 .photo-item {
-  break-inside: avoid;
-  margin-bottom: 1px;
+  position: relative;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: 1px solid var(--border);
   background: var(--bg-card);
+  cursor: pointer;
 }
 .photo-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  transition: opacity 120ms linear, transform 200ms ease;
+  transition: transform 450ms cubic-bezier(0.2, 0.6, 0.2, 1);
 }
-.photo-item:hover img {
-  opacity: 0.85;
-  transform: scale(1.02);
+/* engineering registration tick (top-left) on hover */
+.photo-item::before {
+  content: "";
+  position: absolute;
+  top: 9px; left: 9px;
+  width: 11px; height: 11px;
+  border-top: 1px solid var(--accent);
+  border-left: 1px solid var(--accent);
+  opacity: 0;
+  transition: opacity 180ms ease;
+  z-index: 2;
 }
+/* caption gradient + label on hover */
+.photo-item::after {
+  content: "[ VIEW ]";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 2.5rem 0.9rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: var(--sz-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg);
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+.photo-item:hover {
+  border-color: var(--accent);
+}
+.photo-item:hover img { transform: scale(1.06); }
+.photo-item:hover::before,
+.photo-item:hover::after { opacity: 1; }
+.photo-item:hover::after { transform: translateY(0); }
 
 /* lightbox overlay */
 .lb-overlay {
@@ -679,17 +713,22 @@ footer {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(8,12,16,0.95);
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   align-items: center;
   justify-content: center;
   cursor: zoom-out;
+  padding: 5vh 5vw;
 }
-.lb-overlay.open { display: flex; }
+.lb-overlay.open { display: flex; animation: lb-fade 200ms ease; }
+@keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
 .lb-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 92vw;
+  max-height: 92vh;
   object-fit: contain;
   border: 1px solid var(--border-hi);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
 }
 .lb-close {
   position: fixed;
@@ -700,14 +739,15 @@ footer {
   color: var(--fg-muted);
   cursor: pointer;
   letter-spacing: 0.08em;
+  z-index: 1000;
 }
-.lb-close:hover { color: var(--fg); }
+.lb-close:hover { color: var(--accent); }
 
 @media (max-width: 768px) {
-  .photo-grid { columns: 2; }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 }
 @media (max-width: 480px) {
-  .photo-grid { columns: 1; }
+  .photo-grid { grid-template-columns: 1fr; }
 }
 
 /* ── INDEX LIST PAGES (all projects / all posts) ──────────── */
