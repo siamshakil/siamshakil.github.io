@@ -60,21 +60,28 @@ layout: default
     <div class="about-grid">
       <div class="about-body">
         <p>
-          Graduated as a mechanical engineer who crosses into commercial territory - not because I drifted,
-          but because <strong>the most interesting problems live at the boundary</strong> between
-          how something works and whether it should exist at all.
+          A mechanical engineer working across commercial territory - not by drift, but because
+          <strong>the most interesting problems sit at the boundary</strong> between how something
+          works and whether it should exist at all.
         </p>
         <p>
-          At {{ site.author.org }} I work on Design R&amp;D and technical business development, applying
-          structured methods - <strong>TRIZ, QFD, Pugh matrix</strong> - to problems that most
-          treat as purely intuitive. I hold a {{ site.author.cert }} credential and work daily in
-          <strong>SolidWorks and ANSYS</strong>.
+          I started my career at <strong>BanglaCAT</strong> as a Management Trainee Officer, managing
+          business accounts for some of Bangladesh's most prominent organizations and supporting their
+          energy-generation operations.
         </p>
         <p>
-          My current technical interest is <strong>body-in-white design for local vehicle
-          manufacturing</strong> in Bangladesh, where imported drivetrains meet local packaging
-          constraints. The EV transition in South Asia is early-stage and underspecified -
-          exactly where engineering thinking compounds fastest.
+          I later moved to <strong>BJIT's Mechanical Department</strong> as an external R&amp;D engineer,
+          working with clients across Northern Europe, the USA, and Japan - gaining direct exposure to
+          global R&amp;D operations and <strong>cross-border stakeholder management</strong>.
+        </p>
+        <p>
+          Alongside this, I've maintained professional connections across the automobile, HVAC, and
+          manufacturing industries, and taken on independent technology and business consulting work.
+        </p>
+        <p>
+          My objective now is to bring these threads together - technical depth and business judgment -
+          to work at the <strong>interface of business and technology</strong>, with particular focus on
+          emerging fields: EV, clean energy, and additive manufacturing.
         </p>
         <p style="margin-top:1.5rem;">
           <a href="{{ site.author.cv_path | relative_url }}" class="mono accent" style="font-size:0.8rem;letter-spacing:0.08em;border-bottom:1px solid var(--accent-dim);padding-bottom:1px;">
@@ -83,7 +90,7 @@ layout: default
         </p>
       </div>
       <div>
-        <p class="label" style="margin-bottom:1rem;">Credentials &amp; Certifications</p>
+        <p class="label" style="margin-bottom:1rem;">Credentials, Certifications, &amp; Achievements</p>
         <ul class="credentials-list">
           {% for c in site.data.credentials %}
           <li class="credential-item">
@@ -142,7 +149,7 @@ layout: default
       <hr class="rule-h" style="flex:1;">
     </div>
     <div class="projects-list">
-      {% assign sorted_projects = site.projects | sort: 'year' | reverse %}
+      {% assign sorted_projects = site.projects | sort: 'order' %}
       {% for project in sorted_projects limit: 4 %}
       <div class="project-item">
         <span class="project-index">P.{{ forloop.index }}</span>
@@ -204,9 +211,8 @@ layout: default
       <div>
         <h2 class="contact-heading">Let's work<br>on something<br>real.</h2>
         <p class="contact-sub">
-          Open to roles in Design R&amp;D, technical business development,
-          and EV / clean energy commercialisation in South Asia.
-          Also happy to talk shop on mechanisms, BIW, or IEM tuning.
+          Open to roles in Design Engineering, R&amp;D, Business Development & Operations.
+          Also happy to talk about art, literature, music, perfumes, and photography.
         </p>
         <a href="mailto:{{ site.author.email }}" class="cta-btn">Email Me →</a>
       </div>
@@ -214,6 +220,10 @@ layout: default
         <a href="{{ site.author.linkedin }}" class="contact-link" target="_blank" rel="noopener">
           <span class="contact-link-label">LinkedIn</span>
           <span>{{ site.author.linkedin | remove: "https://" }}</span>
+        </a>
+        <a href="{{ site.author.blog }}" class="contact-link" target="_blank" rel="noopener">
+          <span class="contact-link-label">Blogsite</span>
+          <span>{{ site.author.blog | remove: "https://" }}</span>
         </a>
         <a href="#" class="contact-link">
           <span class="contact-link-label">Location</span>
@@ -227,3 +237,23 @@ layout: default
     </div>
   </div>
 </section>
+
+<script>
+  // Easter egg: click the hero name to cycle the colour scheme
+  (function () {
+    var themes = ['dark', 'oled-gold', 'light-neon', 'light-burgundy'];
+    var name = document.querySelector('.hero-name');
+    if (!name) return;
+    name.style.cursor = 'pointer';
+    name.title = '✦';
+    function current() {
+      try { return localStorage.getItem('sklTheme') || 'dark'; } catch (e) { return 'dark'; }
+    }
+    name.addEventListener('click', function () {
+      var next = themes[(themes.indexOf(current()) + 1) % themes.length];
+      if (next === 'dark') document.documentElement.removeAttribute('data-theme');
+      else document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('sklTheme', next); } catch (e) {}
+    });
+  })();
+</script>

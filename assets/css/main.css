@@ -4,7 +4,7 @@
   --bg-card:   #0F1620;
   --bg-surface:#152030;
   --fg:        #DDD8CC;
-  --fg-muted:  #7A8A94;
+  --fg-muted:  #8C9CA6;
   --fg-dim:    #3A4A56;
   --accent:    #4A9EBF;
   --accent-dim:#1E4A5C;
@@ -24,6 +24,50 @@
   --sz-xl:  1.875rem;
   --sz-2xl: 2.5rem;
   --sz-3xl: 3.5rem;
+}
+
+/* ── THEMES (easter egg: click the hero name to cycle) ───── */
+/* light · burgundy */
+[data-theme="light-burgundy"] {
+  --bg:        #F4F1EC;
+  --bg-card:   #FBF9F5;
+  --bg-surface:#ECE6DC;
+  --fg:        #1C1814;
+  --fg-muted:  #6A6157;
+  --fg-dim:    #B5AB9D;
+  --accent:    #8C2F39;
+  --accent-dim:#E0C4C8;
+  --border:    #DED6CA;
+  --border-hi: #CABFAF;
+  --rule:      #E3DCD1;
+}
+/* light · neon green */
+[data-theme="light-neon"] {
+  --bg:        #F4F6F3;
+  --bg-card:   #FBFCFA;
+  --bg-surface:#E8ECE5;
+  --fg:        #15201A;
+  --fg-muted:  #5C6A60;
+  --fg-dim:    #AEB8AE;
+  --accent:    #0E9F3C;
+  --accent-dim:#C3E8CE;
+  --border:    #DBE0D8;
+  --border-hi: #C6CCC1;
+  --rule:      #E0E4DC;
+}
+/* oled black · gold */
+[data-theme="oled-gold"] {
+  --bg:        #000000;
+  --bg-card:   #0A0A09;
+  --bg-surface:#16140F;
+  --fg:        #EDE8DB;
+  --fg-muted:  #9A9281;
+  --fg-dim:    #4A4534;
+  --accent:    #E3B341;
+  --accent-dim:#5C4A1E;
+  --border:    #1E1D17;
+  --border-hi: #2F2D22;
+  --rule:      #1A1913;
 }
 
 /* ── RESET ──────────────────────────────────────────────── */
@@ -163,11 +207,12 @@ nav.site-nav {
 }
 .hero-descriptor {
   font-family: var(--font-body);
-  font-size: var(--sz-md);
+  font-size: var(--sz-base);
   color: var(--fg-muted);
   max-width: 520px;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 3rem;
+  hyphens: auto;
 }
 .hero-descriptor em {
   font-style: normal;
@@ -218,13 +263,17 @@ nav.site-nav {
 /* ── ABOUT ────────────────────────────────────────────────── */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 3rem;
 }
 .about-body {
-  font-size: var(--sz-md);
+  font-size: var(--sz-base);
   color: var(--fg-muted);
   line-height: 1.8;
+}
+.about-body p {
+  text-align: justify;
+  hyphens: auto;
 }
 .about-body p + p { margin-top: 1rem; }
 .about-body strong { color: var(--fg); font-weight: 500; }

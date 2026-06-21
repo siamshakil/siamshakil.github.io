@@ -1,7 +1,7 @@
 title: "Siam Shakil"
 tagline: "Mechanical Engineer & Technology Business Developer"
 description: "Mechanical engineer and technology business developer, bridging design R&D and commercial strategy. Based in Dhaka, Bangladesh."
-url: "https://siamshakil.github.io"   # change to your actual GitHub Pages URL
+url: "https://siamshakil.github.io"  
 baseurl: ""
 
 author:
@@ -15,7 +15,7 @@ author:
   domain_focus: "Energy · EV"
   email: "siam.shakil3@gmail.com"
   linkedin: "https://www.linkedin.com/in/siam-shakil/"
-  github: "https://github.com/"
+  blog: "https://substack.com/@methodandfolly"
   cv_path: "/assets/cv-siamshakil.pdf"
 
 # Collections - this is what turns folders into structured content

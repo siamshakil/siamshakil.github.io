@@ -1,68 +1,68 @@
 # Edit ratings here (1-5). This file alone drives the entire Skills section.
 # Add a new domain by adding a new top-level entry. Add a skill by adding to items.
 
-- domain: "CAD · Simulation"
+- domain: "CAD · Engineering Drawing"
   items:
     - name: "SolidWorks"
       level: 5
-    - name: "ANSYS FEA"
+    - name: "NX"
       level: 4
-    - name: "CATIA V5"
-      level: 3
-    - name: "Motion Analysis"
+    - name: "Rhino 3D"
       level: 4
+    - name: "AutoCAD"
+      level: 5
 
-- domain: "Design Methods"
+- domain: "Design & Innovation Methods"
   items:
-    - name: "TRIZ"
+    - name: "TRIZ, Design Thinking, Double Diamond"
       level: 4
     - name: "QFD"
-      level: 4
-    - name: "Pugh Matrix"
-      level: 5
-    - name: "DFM / DFA"
       level: 3
+    - name: "Robust Designing, Lean"
+      level: 3
+    - name: "DFM / DFA / etc."
+      level: 4
 
 - domain: "Domain Knowledge"
   items:
-    - name: "BIW / Automotive"
-      level: 4
-    - name: "EV / Clean Energy"
-      level: 4
-    - name: "Supply Chain"
+    - name: "HVAC & Home Appliances"
       level: 3
-    - name: "Occupant Packaging"
+    - name: "EV & Ecosystem"
+      level: 4
+    - name: "Energy Generation"
+      level: 4
+    - name: "Paper & Pulp Machinery"
       level: 3
 
-- domain: "Commercial"
+- domain: "Business & Operation"
   items:
-    - name: "Technical Sales (C&I)"
+    - name: "Sales Management"
       level: 4
-    - name: "Business Development"
+    - name: "Business Development & Operation"
       level: 4
-    - name: "Account Management"
-      level: 3
+    - name: "Project & Product Management"
+      level: 4
     - name: "R&D Data Ops"
       level: 3
 
 - domain: "Analysis"
   items:
-    - name: "FEA (Structural)"
+    - name: "FEA (ANSYS, ABAQUS)"
       level: 4
-    - name: "Mechanism Design"
-      level: 4
-    - name: "Simscape Multibody"
-      level: 2
-    - name: "Thermal Analysis"
+    - name: "CFD (Fluent)"
+      level: 3
+    - name: "System Modeling (Matlab, Simulink)"
+      level: 3
+    - name: "System Dynamics (Vensim)"
       level: 3
 
 - domain: "Tools & Workflow"
   items:
-    - name: "GitHub"
-      level: 3
-    - name: "PDM / PLM"
-      level: 3
-    - name: "MS Office Suite"
-      level: 4
-    - name: "EQ / Audio Tools"
+    - name: "Personal Knowledge Management (PKM)"
       level: 5
+    - name: "Additive Manufacturing (FDM, SLA)"
+      level: 4
+    - name: "Data Analysis & BI (Excel, R, Power BI)"
+      level: 4
+    - name: "Task & Workflow Management"
+      level: 4

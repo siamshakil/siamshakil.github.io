@@ -11,7 +11,7 @@ permalink: /projects/
 </div>
 <div class="container" style="padding-bottom:5rem;">
   <div class="projects-list">
-    {% assign sorted_projects = site.projects | sort: 'year' | reverse %}
+    {% assign sorted_projects = site.projects | sort: 'order' %}
     {% for project in sorted_projects %}
     <div class="project-item">
       <span class="project-index">P.{{ forloop.index }}</span>
